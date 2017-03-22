@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "MainTabBarController.h"
+#import "IndexViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+  
+    MainTabBarController *tabbar = [[MainTabBarController alloc] init];
+//    IndexViewController *index = [[IndexViewController alloc] init];
+    self.window.rootViewController = tabbar;
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
